@@ -1,10 +1,12 @@
 const errorHandler = (error, request, response, next) => {
   if (error.status === 401 && error.message === "Unauthorized") {
+    // defining the HTTP status code
     const status = 401;
     // standard HTTP 401 error message
     const message = "Unauthorized";
-    // the link to the right page from your documentation
-    const documentationLink = "https://auth0.com/blog/forbidden-unauthorized-http-status-codes/#When-to-Use-403-Forbidden-";
+    // the link to the hosted version of the "how-to-handle-authentication" HTML page
+    // you can find in the /docs folder
+    const documentationLink = "https://tonel.github.io/extended-basic-role-based-access-control/how-to-handle-authentication.html";
 
     // implementing a custom error response on 401 errors
     // matching the GitHub error response format
@@ -21,11 +23,13 @@ const errorHandler = (error, request, response, next) => {
       error.code === "invalid_token" &&
       error.message === "Permission denied"
   ) {
+    // defining the HTTP status code
     const status = 403;
     // standard HTTP 403 error message
     const message = "Forbidden";
-    // the link to the right page from your documentation
-    const documentationLink = "https://auth0.com/blog/forbidden-unauthorized-http-status-codes/#When-to-Use-403-Forbidden-";
+    // the link to the hosted version of the "how-to-handle-authorization" HTML page
+    // you can find in the /docs folder
+    const documentationLink = "https://tonel.github.io/extended-basic-role-based-access-control/how-to-handle-authorization.html";
 
     // implementing a custom error response on 403 errors
     // matching the GitHub error response format
