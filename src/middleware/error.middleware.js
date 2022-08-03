@@ -6,7 +6,8 @@ const errorHandler = (error, request, response, next) => {
     const message = "Unauthorized";
     // the link to the hosted version of the "how-to-handle-authentication" HTML page
     // you can find in the /docs folder
-    const documentationLink = "https://tonel.github.io/extended-basic-role-based-access-control/how-to-handle-authentication.html";
+    const authority = `${request.protocol}://${request.hostname}:${process.env.PORT}`;
+    const documentationLink = `${authority}/docs/how-to-handle-authentication.html`;
 
     // implementing a custom error response on 401 errors
     // matching the GitHub error response format
@@ -29,7 +30,8 @@ const errorHandler = (error, request, response, next) => {
     const message = "Forbidden";
     // the link to the hosted version of the "how-to-handle-authorization" HTML page
     // you can find in the /docs folder
-    const documentationLink = "https://tonel.github.io/extended-basic-role-based-access-control/how-to-handle-authorization.html";
+    const authority = `${request.protocol}://${request.hostname}:${process.env.PORT}`;
+    const documentationLink = `${authority}/docs/how-to-handle-authorization.html`;
 
     // implementing a custom error response on 403 errors
     // matching the GitHub error response format
